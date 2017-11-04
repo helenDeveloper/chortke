@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WebRestController {
 
-	@RequestMapping("/")
+	@RequestMapping("/api/hi")
 	public String sayHi() {
 
 		return "hi";

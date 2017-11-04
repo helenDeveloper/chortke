@@ -2,9 +2,11 @@ package com.cert.chortke;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
-@EnableAutoConfiguration
-public class SpringBootStandAloneApp {
+@SpringBootApplication
+public class SpringBootStandAloneApp extends SpringBootServletInitializer {
 
 	
 	 public static void main(String[] args) {
