@@ -6,10 +6,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cert.chortke.dto.User;
 import com.cert.chortke.entities.UserEntity;
 import com.cert.chortke.service.UserRepository;
 
@@ -37,9 +39,11 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/api/saveUser", method = RequestMethod.POST)
-	public Long saveOrUpdate(@PathVariable("user") UserEntity user) {
+	public Long saveOrUpdate(/* @PathVariable("user") */ @RequestBody  User user) {
 
-		UserEntity result = userRepository.save(user);
+		UserEntity entity = new UserEntity();
+		entity.setUsername(user.getUsername());
+		UserEntity result = userRepository.save(entity);
 		if (result != null)
 			return result.getId();
 		return null;
