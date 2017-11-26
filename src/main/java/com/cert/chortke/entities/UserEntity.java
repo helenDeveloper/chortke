@@ -27,6 +27,9 @@ public class UserEntity implements UserDetails {
 		this.id = id;
 	}
 
+	
+	
+	
 	public String getUsername() {
 		return username;
 	}
