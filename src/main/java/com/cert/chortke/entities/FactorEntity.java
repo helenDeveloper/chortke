@@ -18,7 +18,7 @@ public class FactorEntity {
 	private Long id;
 	private String title;
 	private Long price;
-	private Set<StuffTypeEntity> StuffTypes;
+//	private Set<StuffTypeEntity> StuffTypes;
 	private Date purchaseDate;
 	private UserEntity buyer;
 
@@ -47,16 +47,16 @@ public class FactorEntity {
 	public void setPrice(Long price) {
 		this.price = price;
 	}
-
-	@ManyToMany
-	@JoinTable(name = "factor_stufftype", joinColumns = { @JoinColumn(name = "factor_id") }, inverseJoinColumns = { @JoinColumn(name = "stufftype_id") })
-	public Set<StuffTypeEntity> getStuffTypes() {
-		return StuffTypes;
-	}
-
-	public void setStuffTypes(Set<StuffTypeEntity> stuffTypes) {
-		StuffTypes = stuffTypes;
-	}
+//
+//	@ManyToMany
+//	@JoinTable(name = "factor_stufftype", joinColumns = { @JoinColumn(name = "factor_id") }, inverseJoinColumns = { @JoinColumn(name = "stufftype_id") })
+//	public Set<StuffTypeEntity> getStuffTypes() {
+//		return StuffTypes;
+//	}
+//
+//	public void setStuffTypes(Set<StuffTypeEntity> stuffTypes) {
+//		StuffTypes = stuffTypes;
+//	}
 
 	public Date getPurchaseDate() {
 		return purchaseDate;
