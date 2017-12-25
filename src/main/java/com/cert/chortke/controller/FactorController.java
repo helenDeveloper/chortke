@@ -2,6 +2,7 @@ package com.cert.chortke.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +56,10 @@ public class FactorController {
 	public Long saveOrUpdate(
 	/* @PathVariable("user") */@RequestBody Factor factor) {
 
+		Map<String, Long> purchaseComponent = factor.getPurchaseComponent();
+			
+		
+		
 		FactorEntity entity = modelMapper.map(factor, FactorEntity.class);
 
 		FactorEntity result = factorRepository.save(entity);

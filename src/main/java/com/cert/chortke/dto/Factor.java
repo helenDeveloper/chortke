@@ -2,6 +2,7 @@ package com.cert.chortke.dto;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public class Factor {
 
@@ -11,6 +12,15 @@ public class Factor {
 	private List<StuffType> StuffTypes;
 	private Date purchaseDate;
 	private User buyer;
+	private Map<String, Long> purchaseComponent;
+
+	public Map<String, Long> getPurchaseComponent() {
+		return purchaseComponent;
+	}
+
+	public void setPurchaseComponent(Map<String, Long> purchaseComponent) {
+		this.purchaseComponent = purchaseComponent;
+	}
 
 	public Long getId() {
 		return id;
